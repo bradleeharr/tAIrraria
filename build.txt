@@ -1,0 +1,3 @@
+displayName = TerrAI
+author = Bradleeharr
+version = 0.1

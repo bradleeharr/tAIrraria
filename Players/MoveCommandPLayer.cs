@@ -10,6 +10,9 @@ namespace TerrAI.Players
 {
     internal class MoveCommandPlayer : ModPlayer
     {
+        public int jumpTimer = 0;
+        public int useItemTimer = 0;
+        public int moveDownTimer = 0;
         public int moveLeftTimer = 0;
         public int moveRightTimer = 0;
 
@@ -26,6 +29,25 @@ namespace TerrAI.Players
                 Player.controlRight = true;
                 moveRightTimer--;
             }
+
+            if (moveDownTimer > 0)
+            {
+                Player.controlDown = true;
+                moveDownTimer--;
+            }
+
+            if (jumpTimer > 0)
+            {
+                Player.controlJump = true;
+                jumpTimer--;
+            }
+
+            if (useItemTimer > 0)
+            {
+                Player.controlUseItem = true;
+                useItemTimer--;
+            }
+
         }
     }
 }

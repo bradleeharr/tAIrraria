@@ -26,16 +26,42 @@ namespace TerrAI.Players
                 Main.NewText("Please specify a direction: left, right, etc.");
                 return;
             }
+            string action = args[0].ToLower();
 
-            if (args[0].ToLower() == "left")
+            switch (action)
             {
-                modPlayer.moveLeftTimer = 60;  // 60 ticks, or 1 second at 60 FPS
+                case "left":
+                    modPlayer.moveLeftTimer = 60;
+                    break;
+                case "right":
+                    modPlayer.moveRightTimer = 60;
+                    break;
+                case "jump":
+                    modPlayer.jumpTimer = 30;
+                    break;
+                case "down":
+                    modPlayer.moveDownTimer = 15;
+                    break;
+                case "useitem":
+                    modPlayer.useItemTimer= 240;
+                    break;
+                case "switchitem":
+                    if (args.Length > 1 && int.TryParse(args[1], out int index) && index >= 0 && index <= 9)
+                    {
+                        player.selectedItem = index;
+                    }
+                    else
+                    {
+                        Main.NewText("Please specify an item slot between 0 and 9.");
+                    }
+                    break;
+                case "openinv":
+                    Main.playerInventory = !Main.playerInventory;
+                    break;
+                default:
+                    Main.NewText("Unknown action.");
+                    break;
             }
-            else if (args[0].ToLower() == "right")
-            {
-                modPlayer.moveRightTimer = 60;
-            }
-            // ... handle other directions or commands
         }
     }
 

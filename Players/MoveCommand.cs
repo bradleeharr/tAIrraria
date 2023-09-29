@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria.ModLoader;
 using Terraria;
+using TerrAI;
 
 namespace TerrAI.Players
 {
@@ -57,6 +58,25 @@ namespace TerrAI.Players
                     break;
                 case "openinv":
                     Main.playerInventory = !Main.playerInventory;
+                    break;
+                case "target":
+                    // Toggle the active state
+                    modPlayer.targetingSystem.IsActive = true;
+                    modPlayer.targetingSystem.Timer = 1000;
+                    if (args.Length > 1)
+                    {
+                        string npcName = args[1].ToLower();
+                        foreach (var npc in Main.npc)
+                        {
+                            if (npc.active && npc.FullName.ToLower().Contains(npcName))
+                            {
+                                Main.NewText("Selected Target");
+                                modPlayer.targetingSystem.CurrentTarget = npc;
+                                break;
+                            }
+                        }
+                        Main.NewText("Please specify a valid NPC.");
+                    }
                     break;
                 default:
                     Main.NewText("Unknown action.");

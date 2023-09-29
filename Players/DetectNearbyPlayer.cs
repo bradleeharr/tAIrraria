@@ -25,14 +25,14 @@ namespace TerrAI.Players
         {
             detectedNPCs = new List<NPC>();  // Initialize the list
 
-            int detectionRadius = 50 * 16;  // Example value in pixels; 50 tiles
+            int detectionRadius = 5 * 16;  // Example value in pixels; 50 tiles
 
             foreach (var npc in Main.npc)
             {
                 if (npc.active && !npc.townNPC && Player.Distance(npc.Center) < detectionRadius)
                 {
                     detectedNPCs.Add(npc);
-                    Main.NewText($"Add NPC to detectedNPCs: {npc}!", 255, 255, 0);  // The numbers 255, 255, 0 represent the color (yellow in this case
+                    Main.NewText($"Add {npc.FullName} to detectedNPCs: {npc}!", 255, 255, 0);  // The numbers 255, 255, 0 represent the color (yellow in this case
 
                 }
             }

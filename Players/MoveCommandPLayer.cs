@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria.ModLoader;
 using Terraria;
+using Microsoft.Xna.Framework;
 
 namespace TerrAI.Players
 {
@@ -15,6 +16,7 @@ namespace TerrAI.Players
         public int moveDownTimer = 0;
         public int moveLeftTimer = 0;
         public int moveRightTimer = 0;
+        public TargetingSystem targetingSystem = new TargetingSystem();
 
         public override void ResetEffects()
         {
@@ -47,7 +49,15 @@ namespace TerrAI.Players
                 Player.controlUseItem = true;
                 useItemTimer--;
             }
+            if (targetingSystem.IsActive && targetingSystem.Timer > 0 && targetingSystem.CurrentTarget != null)
+            {
+                // Main.NewText($"Targeting... {targetingSystem.CurrentTarget.FullName} at {targetingSystem.CurrentTarget.position}");
+                // Convert target's world position to screen position and set as mouse position
+                // Currently placeholder with zombie NPC sprite
+                TargetModWorld.targetPosition = targetingSystem.CurrentTarget.position;
+                targetingSystem.Timer--;
 
+            }
         }
     }
 }

@@ -34,8 +34,7 @@ namespace TerrAI
                 string command = Encoding.ASCII.GetString(buffer, 0, i);
                 Console.WriteLine($"Received command: {command}");
 
-                // Execute received command in game
-                // ExecuteCommand(command); // Call your command execution method here
+                // Execute received command in game here
 
                 client.Close();
             }

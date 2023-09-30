@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dobqXEqGGImYPBhakUv2er8zO2hb6Ngp3dncjO98ZtJJfQIKqkxjNHIexMP2KM0FryUEMoFuF2Uf0ElG8y/QKA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bubba\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\TerrAI\\TerrAI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bubba\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

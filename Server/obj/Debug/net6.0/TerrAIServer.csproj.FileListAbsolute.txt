@@ -1,0 +1,15 @@
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\bin\Debug\net6.0\TerrAIServer.exe
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\bin\Debug\net6.0\TerrAIServer.deps.json
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\bin\Debug\net6.0\TerrAIServer.runtimeconfig.json
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\bin\Debug\net6.0\TerrAIServer.dll
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\bin\Debug\net6.0\TerrAIServer.pdb
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\obj\Debug\net6.0\TerrAIServer.csproj.AssemblyReference.cache
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\obj\Debug\net6.0\TerrAIServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\obj\Debug\net6.0\TerrAIServer.AssemblyInfoInputs.cache
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\obj\Debug\net6.0\TerrAIServer.AssemblyInfo.cs
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\obj\Debug\net6.0\TerrAIServer.csproj.CoreCompileInputs.cache
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\obj\Debug\net6.0\TerrAIServer.dll
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\obj\Debug\net6.0\refint\TerrAIServer.dll
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\obj\Debug\net6.0\TerrAIServer.pdb
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\obj\Debug\net6.0\TerrAIServer.genruntimeconfig.cache
+C:\Users\bubba\source\repos\TerrAIServer\TerrAIServer\obj\Debug\net6.0\ref\TerrAIServer.dll

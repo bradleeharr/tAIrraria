@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
 using TerrAI;
+using Microsoft.Xna.Framework;
 
 namespace TerrAI.Players
 {
@@ -44,8 +45,31 @@ namespace TerrAI.Players
         private async void SendGameData()
         {
             // Gather the player data you want to send
-            string data = "PlayerData";  // Replace with actual player data
+            string data = GetPlayerData();  // Replace with actual player data
             await connection.SendDataAsync(data);
+        }
+
+        private string GetPlayerData()
+        {
+            StringBuilder dataBuilder = new StringBuilder();
+
+            // Player position
+            dataBuilder.AppendLine($"Position: {Player.position.X}, {Player.position.Y}");
+            // Player health
+            dataBuilder.AppendLine($"Health: {Player.statLife}/{Player.statLifeMax}");
+            // Player mana
+            dataBuilder.AppendLine($"Mana: {Player.statMana}/{Player.statManaMax}");
+            dataBuilder.AppendLine($" {Player.}/{Player.statManaMax}");
+
+            // Player's first inventory item (as an example)
+            if (Player.inventory[0] != null)
+            {
+                dataBuilder.AppendLine($"First Inventory Item: {Player.inventory[0].Name}");
+            }
+
+            // Convert the StringBuilder to a string
+            string data = dataBuilder.ToString();
+            return data;
         }
     }
 }

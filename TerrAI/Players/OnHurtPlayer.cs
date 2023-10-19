@@ -13,7 +13,7 @@ namespace TerrAI.Players
     {
         public override void OnHurt(Player.HurtInfo info)
         {
-            Main.NewText($"Player was hit for {info.Damage}!", 255, 255, 0);  // The numbers 255, 255, 0 represent the color (yellow in this case
+            Main.NewText($"Player was hit for {info.Damage}!", 255, 255, 0);  
         }
     }
 }

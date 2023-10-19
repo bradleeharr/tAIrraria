@@ -15,7 +15,7 @@ namespace TerrAI.Players
         private List<Player> detectedPlayers;
         public override void OnHurt(Player.HurtInfo info)
         {
-            Main.NewText($"Player was hit for {info.Damage}!", 255, 255, 0);  // The numbers 255, 255, 0 represent the color (yellow in this case
+            Main.NewText($"Player was hit for {info.Damage}!", 255, 255, 0); 
         }
         public override void PostUpdate()
         {
@@ -23,21 +23,18 @@ namespace TerrAI.Players
         }
         private void DetectNearbyEntities()
         {
-            detectedNPCs = new List<NPC>();  // Initialize the list
-
-            int detectionRadius = 5 * 16;  // Example value in pixels; 50 tiles
-
+            detectedNPCs = new List<NPC>();  
+            int detectionRadius = 5 * 16;  // Example value in pixels; 5 tiles
             foreach (var npc in Main.npc)
             {
                 if (npc.active && !npc.townNPC && Player.Distance(npc.Center) < detectionRadius)
                 {
                     detectedNPCs.Add(npc);
-                    Main.NewText($"Add {npc.FullName} to detectedNPCs: {npc}!", 255, 255, 0);  // The numbers 255, 255, 0 represent the color (yellow in this case
+                    Main.NewText($"Add {npc.FullName} to detectedNPCs: {npc}!", 255, 255, 0);
 
                 }
             }
-
-            // You can similarly detect players if needed
+            // Can similarly detect players if needed
         }
     }
 }

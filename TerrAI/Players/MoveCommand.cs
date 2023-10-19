@@ -11,12 +11,9 @@ namespace TerrAI.Players
 {
     public class MoveCommand : ModCommand
     {
-        public override CommandType Type => CommandType.Chat; // Specify that this is a chat command
-
-        public override string Command => "move";  // The desired text to trigger this command
-
-        public override string Description => "Move the player.";  // A short description of this command
-
+        public override CommandType Type => CommandType.Chat;
+        public override string Command => "move"; 
+        public override string Description => "Move the player."; 
         public override void Action(CommandCaller caller, string input, string[] args)
         {
             Player player = caller.Player;  // Access the player who executed the command
@@ -60,7 +57,6 @@ namespace TerrAI.Players
                     Main.playerInventory = !Main.playerInventory;
                     break;
                 case "target":
-                    // Toggle the active state
                     modPlayer.targetingSystem.IsActive = true;
                     modPlayer.targetingSystem.Timer = 1000;
                     if (args.Length > 1)

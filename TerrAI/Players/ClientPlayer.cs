@@ -44,7 +44,6 @@ namespace TerrAI.Players
 
         private async void SendGameData()
         {
-            // Gather the player data you want to send
             string data = GetPlayerData();  // Replace with actual player data
             await connection.SendDataAsync(data);
         }
@@ -53,20 +52,20 @@ namespace TerrAI.Players
         {
             StringBuilder dataBuilder = new StringBuilder();
 
-            // Player position
+            // Player position, health, mana
             dataBuilder.AppendLine($"Position: {Player.position.X}, {Player.position.Y}");
-            // Player health
             dataBuilder.AppendLine($"Health: {Player.statLife}/{Player.statLifeMax}");
-            // Player mana
             dataBuilder.AppendLine($"Mana: {Player.statMana}/{Player.statManaMax}");
-            dataBuilder.AppendLine($" {Player.}/{Player.statManaMax}");
 
-            // Player's first inventory item (as an example)
-            if (Player.inventory[0] != null)
-            {
-                dataBuilder.AppendLine($"First Inventory Item: {Player.inventory[0].Name}");
+            // Player's inventory items
+            int INVENTORY_SIZE = 59;
+            for (int i = 0; i < INVENTORY_SIZE; i++)
+            {    
+                if (Player.inventory[i] != null)
+                {
+                    dataBuilder.AppendLine($"Inventory Item {i}: {Player.inventory[i].Name}");
+                }
             }
-
             // Convert the StringBuilder to a string
             string data = dataBuilder.ToString();
             return data;
